@@ -1,0 +1,364 @@
+:root {
+  color-scheme: light;
+  --page: #f8f7f1;
+  --surface: #fffdf8;
+  --ink: #25342c;
+  --muted: #536258;
+  --forest: #214737;
+  --forest-dark: #17392b;
+  --forest-light: #e8efe5;
+  --line: #d7ded3;
+  --focus: #97511b;
+  font-family: "Instrument Sans", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+  color: var(--ink);
+}
+
+body > main {
+  flex: 1;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  color: var(--forest-dark);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--forest);
+  text-underline-offset: .2em;
+  overflow-wrap: anywhere;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.site-shell {
+  width: min(70rem, calc(100% - clamp(2rem, 8vw, 7rem)));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: .25rem;
+  padding-block: .65rem;
+}
+
+.brand, .header-link, .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 2.75rem;
+  font-weight: 700;
+}
+
+.brand {
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: .4rem;
+  color: var(--surface);
+  background: var(--forest);
+  line-height: 1;
+}
+
+.header-link, .back-link {
+  font-size: .925rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.65rem, 6vw, 5rem);
+  padding-block: clamp(2.5rem, 8vw, 6.25rem);
+}
+
+.hero h1, .lesson-heading h1 {
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+
+.hero h1 {
+  font-size: clamp(1.875rem, 5vw, 3.65rem);
+}
+
+.eyebrow, .example-label, .concept-label {
+  font-size: .875rem;
+  font-weight: 750;
+}
+
+.eyebrow {
+  margin-bottom: .55rem;
+  color: var(--forest);
+}
+
+.lede {
+  max-width: 38em;
+  margin-top: .95rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  min-height: 2.75rem;
+  margin-top: 1.4rem;
+  padding: .55rem 1.1rem;
+  border-radius: .4rem;
+  background: var(--forest);
+  color: var(--surface);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-link:hover {
+  background: var(--forest-dark);
+}
+
+.hero-example {
+  min-width: 0;
+  padding: clamp(1.15rem, 4vw, 2rem);
+  border: 1px solid #cad9c9;
+  border-radius: .7rem;
+  background: var(--forest-light);
+}
+
+.example-label, .concept-label {
+  color: var(--forest);
+}
+
+.example-question {
+  margin-top: .3rem;
+  color: var(--forest-dark);
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.concept-list, .lesson-list {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.concept-list {
+  margin-top: 1rem;
+}
+
+.concept-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: .8rem;
+  padding-block: .45rem;
+  border-top: 1px solid #cad9c9;
+}
+
+.concept-name {
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.catalog {
+  padding-block: 1.6rem clamp(2.75rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.catalog h2 {
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+}
+
+.lesson-list {
+  display: grid;
+  gap: .75rem;
+  margin-top: .9rem;
+}
+
+.lesson-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(.65rem, 2vw, 1.15rem);
+  padding: clamp(.8rem, 2.5vw, 1.25rem);
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lesson-card:hover {
+  border-color: var(--forest);
+}
+
+.lesson-number {
+  display: grid;
+  min-width: 2.1rem;
+  min-height: 2.1rem;
+  place-items: center;
+  padding: .15rem .4rem;
+  border-radius: .35rem;
+  background: var(--forest-light);
+  color: var(--forest);
+  font-size: .875rem;
+  font-weight: 750;
+}
+
+.lesson-card-copy h3 {
+  margin-top: .15rem;
+  font-size: clamp(1.06rem, 2.5vw, 1.25rem);
+}
+
+.lesson-card:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.lesson-card-copy p {
+  margin-top: .3rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.lesson-arrow {
+  margin-top: .08rem;
+  color: var(--forest);
+  font-size: 1.2rem;
+}
+
+.lesson-main {
+  width: min(47rem, calc(100% - clamp(2rem, 8vw, 7rem)));
+  margin-inline: auto;
+}
+
+.lesson-heading {
+  padding-top: clamp(1.1rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.lesson-heading h1 {
+  font-size: clamp(1.875rem, 4.75vw, 3.2rem);
+}
+
+.lesson-content > section {
+  padding-block: clamp(1.15rem, 3vw, 1.75rem);
+  border-top: 1px solid var(--line);
+}
+
+.lesson-content h2 {
+  margin-bottom: .65rem;
+  font-size: clamp(1.22rem, 2.5vw, 1.5rem);
+}
+
+.lesson-content ol, .lesson-content ul {
+  margin-block: .6rem 0;
+  padding-inline-start: 1.6em;
+}
+
+.lesson-content li + li {
+  margin-top: .35rem;
+}
+
+.lesson-content li::marker {
+  color: var(--forest);
+  font-weight: 750;
+}
+
+.example-box {
+  padding: clamp(.9rem, 3vw, 1.3rem);
+  border-left: .2rem solid #71947d;
+  border-radius: .25rem;
+  background: var(--forest-light);
+  overflow-wrap: anywhere;
+}
+
+.term-list {
+  margin-block: .85rem 0;
+}
+
+.term-list dt {
+  font-weight: 750;
+}
+
+.term-list dd {
+  margin-left: 0;
+  margin-bottom: .4rem;
+  color: var(--muted);
+}
+
+.lesson-content pre {
+  max-width: 100%;
+  margin-block: .75rem 0;
+  padding: .8rem 1rem;
+  border-radius: .35rem;
+  background: var(--forest-dark);
+  color: var(--surface);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.example-box pre + p {
+  margin-top: .75rem;
+}
+
+.lesson-content code {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: .9em;
+}
+
+.check-list {
+  list-style-type: square;
+}
+
+.lesson-footer {
+  padding-block: .7rem 2.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer {
+  padding-block: .9rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 43rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
